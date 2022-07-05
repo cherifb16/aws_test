@@ -34,6 +34,9 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/safe_deploy_to"
 require "capistrano/rbenv"
+
+append :linked_files, 'config/secrets.yml' 
+
 # require "capistrano/passenger"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
