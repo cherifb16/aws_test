@@ -34,6 +34,7 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/safe_deploy_to"
 require "capistrano/rbenv"
+require 'capistrano3/unicorn'
 
 append :linked_files, 'config/secrets.yml' 
 
