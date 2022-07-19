@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock "~> 3.17.0"
 
 set :application, "aws_test"
 set :repo_url, "https://github.com/cherifb16/aws_test.git"
@@ -15,7 +15,7 @@ set :linked_files, %w{config/secrets.yml}   # 4
 
  namespace :deploy do
    desc 'Run seed'
-   task :seed do
+   blog :seed do
      on roles(:db) do
        with rails_env: fetch(:rails_env) do
          within current_path do
@@ -25,7 +25,7 @@ set :linked_files, %w{config/secrets.yml}   # 4
      end
    end
    desc 'Restart application'
-   task :restart do
+   blog :restart do
      invoke 'unicorn:restart'
    end
  end
