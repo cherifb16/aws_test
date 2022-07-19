@@ -15,7 +15,7 @@ set :linked_files, %w{config/secrets.yml}   # 4
 
  namespace :deploy do
    desc 'Run seed'
-   blog :seed do
+   task :seed do
      on roles(:db) do
        with rails_env: fetch(:rails_env) do
          within current_path do
@@ -25,7 +25,7 @@ set :linked_files, %w{config/secrets.yml}   # 4
      end
    end
    desc 'Restart application'
-   blog :restart do
+   task :restart do
      invoke 'unicorn:restart'
    end
  end
